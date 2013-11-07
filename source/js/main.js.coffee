@@ -6,7 +6,7 @@ require.config
     backbone: "vendor/backbone"
     forbid:   "vendor/forbid-selected"
   shim:
-    underscore: 
+    underscore:
       exports: "_"
     backbone:
       deps: ["underscore", "jquery"]
