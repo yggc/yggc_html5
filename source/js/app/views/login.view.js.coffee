@@ -1,0 +1,51 @@
+define [
+  'composite.view'
+  'jquery'
+  'app/models/user'
+  'app/templates/login_register/login'
+], (CompositeView, $, ProfileView, User, LoginTemplate)->
+  
+  class LoginView extends CompositeView
+    
+    tagName: 'section'
+    id: 'login-view'
+
+    initialize: (options) ->
+      loginTemplate = JST['app/templates/login_register/login'] 
+      @$el.html loginTemplate
+
+    events:
+      'click #login-btn': 'login'
+      'click #register-btn': 'register'
+      'click #forget-password': 'forgetPassword'
+
+    login: ->
+      email = $('#login').find('.email').val()
+      password = $('#login').find('.password').val()
+      loginData =
+        login: email
+        password: password
+        get_json: true
+      $('#loading').show()
+      @model.save loginData,
+        wait: true
+        success: @successCreate
+    
+    register: ->
+      ''
+
+    successCreate: (model, response, options) ->
+      data = response.data
+      if data.error_message
+        App.tool_helper.alert data.error_message
+      else
+        user = data.user
+        window.localStorage.setItem('userAccessToken', user.token) 
+        window.localStorage.setItem('userId', user.id)
+        window.localStorage.setItem('userEmail', user.email) 
+        App.router.loggedIn()
+        App.router.home()
+      App.tool_helper.hideLoading()
+
+    navRegister: ->
+      App.router.register()
