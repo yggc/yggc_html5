@@ -257,20 +257,11 @@ legend {
     padding: 0; /* 2 */
 }
 
-/*
- * 1. Corrects font family not being inherited in all browsers.
- * 2. Corrects font size not being inherited in all browsers.
- * 3. Addresses margins set differently in Firefox 4+, Safari 5, and Chrome
- */
-
-button,
-input,
-select,
-textarea {
-    font-family: inherit; /* 1 */
-    font-size: 100%; /* 2 */
-    margin: 0; /* 3 */
-}
+/*  * 1. Corrects font family not being inherited in all browsers.  * 2.
+Corrects font size not being inherited in all browsers.  * 3. Addresses
+margins set differently in Firefox 4+, Safari 5, and Chrome  */ /* button,
+input, select, textarea {     font-family: inherit;  1      font-size: 100%;
+margin: 0;  }*/
 
 /*
  * Addresses Firefox 4+ setting `line-height` on `input` using `!important` in

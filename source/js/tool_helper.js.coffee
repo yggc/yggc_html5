@@ -9,4 +9,7 @@ define ['backbone','jquery'], (Backbone, $) ->
       $('#loading').hide() 
 
     showLoading: ->
-      $('#loading').show()  
+      $('#loading').show()
+    
+    log: (info) ->
+       console.log('LOG: ' + info ) if window.console && window.console.log

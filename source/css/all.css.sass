@@ -1,7 +1,7 @@
 @charset "utf-8"
 @import variables
 @import mixins
-
+@import login
 
 *
   -webkit-user-select: none
@@ -22,8 +22,10 @@ body
 input, textarea
   -webkit-user-select: text
 
-#canvas
-  display: none
+input
+  font-size: $big_font_size
+  padding: 18px 20px
+  margin: 0 -20px
 
 #loading
   background: url(../img/loading.gif)
@@ -32,7 +34,7 @@ input, textarea
   width: 32px
   height: 32px
 
-.main
+#main
   top: $page_title_height
   left: 0
   right: 0
@@ -42,7 +44,7 @@ input, textarea
 *:focus
   outline: none
 
-#page-title
+#header
   position: absolute
   background: $main_color
   color: white
@@ -56,11 +58,6 @@ input, textarea
     font-size: $title_font_size + 2px
 
 #content
-  position: absolute
-  top: $page_title_height
-  left: $menu_width + 10px
-  right: 10px
-  bottom: 0
   overflow: auto
 
 ul

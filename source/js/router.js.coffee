@@ -51,4 +51,5 @@ define [
       login = new Login()
       loginView = new LoginView
         model: login
-      $('body').prepend(loginView.el)
+      $('#main').prepend(loginView.el)
+    

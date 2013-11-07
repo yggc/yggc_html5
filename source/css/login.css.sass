@@ -1,0 +1,25 @@
+#login
+  width: 100%
+  input
+    border: none
+    width: 100%
+    // margin: 0 0 0 5%
+  .inputs
+    width: 70%
+    margin: 20px auto
+  .email, .password
+    border: 1px solid $input_border_color
+  .password
+    border-top: none
+  button
+    width: 40%
+    padding: 5px
+    margin: 20px auto
+    color: white
+    border: none
+    font-size: $big_font_size
+    @include border_radius(5px)
+    &#forget-password
+      background: red
+    &#login-btn
+      background: blue

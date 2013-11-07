@@ -7,10 +7,11 @@ define [
   
   class LoginView extends CompositeView
     
-    tagName: 'section'
-    id: 'login-view'
+    tagName: 'div'
+    id: 'login'
 
     initialize: (options) ->
+      $('header').html()
       loginTemplate = JST['app/templates/login_register/login'] 
       @$el.html loginTemplate
 
@@ -32,7 +33,12 @@ define [
         success: @successCreate
     
     register: ->
-      ''
+      App.tool_helper.log('to register view')
+      # App.router.register()
+
+    forgetPassword: ->
+      App.tool_helper.log('to forget-password view')
+      # App.router.forgetPassword()
 
     successCreate: (model, response, options) ->
       data = response.data
@@ -47,5 +53,3 @@ define [
         App.router.home()
       App.tool_helper.hideLoading()
 
-    navRegister: ->
-      App.router.register()
