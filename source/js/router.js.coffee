@@ -2,16 +2,18 @@ define [
   'backbone' 
   'jquery'
   'tool_helper'
-], (Backbone, $, ToolHelper) ->
+  'app/models/login'
+  'app/views/login_view'
+], (Backbone, $, ToolHelper, Login, LoginView) ->
   
   class Router extends Backbone.Router
     
     initialize: (options) ->
       window.App.tool_helper = new ToolHelper()
-    #   if !@loggedIn()
-    #     @login()
-    #   else
-    #     @home()
+      if !@loggedIn()
+        @login()
+      else
+        @home()
 
     swap: (newView) ->
       @currentView.leave() if @currentView && @currentView.leave
