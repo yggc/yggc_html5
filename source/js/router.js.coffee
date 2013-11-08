@@ -1,19 +1,26 @@
 define [
   'backbone' 
   'jquery'
+  'noClickDelay'
   'tool_helper'
   'app/models/login'
   'app/views/login_view'
-], (Backbone, $, ToolHelper, Login, LoginView) ->
+  'viewnavigator'
+], (Backbone, $, NoClickDelay, ToolHelper, Login, LoginView, ViewNavigator) ->
   
   class Router extends Backbone.Router
     
     initialize: (options) ->
       window.App.tool_helper = new ToolHelper()
-      if !@loggedIn()
-        @login()
-      else
-        @home()
+      window.viewNavigator = new ViewNavigator( 'body' )
+      # defaultView = App.tool_helper.getView()
+      defaultView = new NewsView()
+      defaultView.backLabel = null
+      window.viewNavigator.pushView(defaultView)
+      # if !@loggedIn()
+      #   @login()
+      # else
+      #   @home()
 
     swap: (newView) ->
       @currentView.leave() if @currentView && @currentView.leave
@@ -38,7 +45,6 @@ define [
 
     news: ->
       App.tool_helper.hideLoading()
-      $('#main').prepend(menuView.el)
       news = new news()
       newsView = new NewsView
         collection: news

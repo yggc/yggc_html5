@@ -6,7 +6,7 @@ define ['composite.view'
 
   class NewsView extends CompositeView
     
-    className: 'new-view'
+    className: 'news-view'
 
     initialize: (options) ->
       ''
