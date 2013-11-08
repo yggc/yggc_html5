@@ -8,16 +8,20 @@
         <link rel='stylesheet' type='text/css' href='css/all.css'>
         <link rel='stylesheet' type='text/css' href='css/normalize.css'>
         <link rel='stylesheet' type='text/css' href='css/slide/viewnavigator.css'>
-        <script src="js/vendor/fastclick.js"></script>
-        <script src="js/vendor/hammer.min.js"></script>
+        <link rel='stylesheet' type='text/css' href='css/slide/slidingview.css'>
+        <script src="js/vendor/swipeview.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
         <script data-main="js/main" src="js/vendor/require.js"></script>
     </head>
     <body>
-        <div id='loading'></div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
+        <div id='loading'></div>
+        <div class="slidingview_wrapper">
+            <div id="sidebar">sidebar here!</div>
+        </div>
+        <div id="main"></div>
     </body>
 </html>

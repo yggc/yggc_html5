@@ -5,7 +5,9 @@ require.config
     underscore: "vendor/underscore"
     backbone: "vendor/backbone"
     viewnavigator: "vendor/slide/viewnavigator"
+    slidingview: "vendor/slide/slidingview"
     noClickDelay: "vendor/slide/noClickDelay"
+    animationEnhanced: "vendor/slide/jquery.animate-enhanced"
 
   shim:
     underscore:
@@ -14,8 +16,12 @@ require.config
       deps: ["underscore", "jquery"]
       exports: "Backbone"
     viewnavigator:
-      deps: ["jquery"]
+      deps: ['jquery']
       exports: 'ViewNavigator'
+    slidingview:
+      exports: 'SlidingView'
+    animationEnhanced:
+      exports: 'AnimationEnhanced'
 window.App =
   # apiHost: 'http://www.sinopr.org'
   apiHost: 'http://0.0.0.0:3000'

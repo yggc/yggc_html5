@@ -7,17 +7,19 @@ define [
   'app/views/login_view'
   'app/views/news/news_view'
   'viewnavigator'
-], (Backbone, $, NoClickDelay, ToolHelper, Login, LoginView, NewsView, ViewNavigator) ->
+  'slidingview'
+  'animationEnhanced'
+], (Backbone, $, NoClickDelay, ToolHelper, Login, LoginView, NewsView, ViewNavigator, SlidingView, AnimationEnhanced) ->
   
   class Router extends Backbone.Router
     
     initialize: (options) ->
       window.App.tool_helper = new ToolHelper()
-      window.viewNavigator = new ViewNavigator( 'body' )
+      window.viewNavigator = new ViewNavigator('body')
       defaultView = App.tool_helper.firstView()
-      # defaultView = new NewsView()
       defaultView.backLabel = "<div class='slide-menu'><i></i></div>"
       window.viewNavigator.pushView(defaultView)
+      new SlidingView( 'sidebar', 'main' )
       # if !@loggedIn()
       #   @login()
       # else

@@ -43,7 +43,7 @@ var ViewNavigator = function( target, options ) {
     var regexp = new RegExp('Windows Phone OS 7');
     this.winPhone = (navigator.userAgent.search(regexp) >= 0);
 
-    this.rootElement = $('<div id="' + this.options.CSSNamespace + 'main"></div>');
+    this.rootElement = $('#main');
     this.header = $('<div id="' + options.CSSNamespace + 'header"></div>');
     this.content = $('<div class="' + options.CSSNamespace + 'content" id="contentRoot"></div>');
     this.rootElement.append( this.header );
