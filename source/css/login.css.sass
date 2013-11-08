@@ -9,18 +9,22 @@
     margin: 20px auto
   .email, .password
     border: 1px solid $input_border_color
-    @include side_border_radius(top, left, 5px)
+  .email
+    @include border-top-left-radius($input_radius)
+    @include border-top-right-radius($input_radius)
   .password
     border-top: none
+    @include border-bottom-left-radius($input_radius)
+    @include border-bottom-right-radius($input_radius)
   button
     width: 40%
-    padding: 5px
+    padding: 7px
     margin: 20px auto
     color: white
     border: none
     font-size: $big_font_size
-    @include border_radius(5px)
+    @include border-radius(5px)
     &#forget-password
-      background: red
+      background: rgb(216,143,28)
     &#login-btn
-      background: blue
+      background: $main_color
