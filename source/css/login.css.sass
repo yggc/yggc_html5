@@ -6,7 +6,7 @@
     // margin: 0 0 0 5%
   .inputs
     width: 70%
-    margin: 20px auto
+    margin: 30px auto
   .email, .password
     border: 1px solid $input_border_color
   .email
@@ -16,15 +16,17 @@
     border-top: none
     @include border-bottom-left-radius($input_radius)
     @include border-bottom-right-radius($input_radius)
-  button
-    width: 40%
-    padding: 7px
-    margin: 20px auto
-    color: white
-    border: none
-    font-size: $big_font_size
-    @include border-radius(5px)
-    &#forget-password
-      background: rgb(216,143,28)
-    &#login-btn
-      background: $main_color
+  .buttons
+    width: 70%
+    margin: 0 auto
+    button
+      width: 90%
+      padding: 6px
+      color: white
+      border: none
+      font-size: $big_font_size
+      @include border-radius(5px)
+      &#forget-password
+        background: rgb(216,143,28)
+      &#login-btn
+        background: $main_color
