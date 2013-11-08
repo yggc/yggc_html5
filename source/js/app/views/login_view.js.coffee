@@ -4,7 +4,7 @@ define [
   'app/models/user'
   'app/templates/login_register/login'
   'app/templates/login_register/login_header'
-], (CompositeView, $, ProfileView, User, LoginTemplate, LoginHeaderTemplate)->
+], (CompositeView, $, User, LoginTemplate, LoginHeaderTemplate) ->
   
   class LoginView extends CompositeView
     
