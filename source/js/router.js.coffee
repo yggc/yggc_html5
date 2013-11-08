@@ -20,7 +20,6 @@ define [
       window.viewNavigator = new ViewNavigator('body')
       # load first view
       defaultView = App.tool_helper.firstView()
-      defaultView.backLabel = "<div class='slide-menu'><i onclick='slide.open()'></i></div>"
       window.viewNavigator.pushView(defaultView)
       # load slide bar
       slideBarView = new SlideBarView()
