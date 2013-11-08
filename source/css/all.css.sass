@@ -33,6 +33,7 @@ input
   @include center(-16px)
   width: 32px
   height: 32px
+  z-index: 10000
 
 #main
   // top: $page_title_height
@@ -64,6 +65,14 @@ input
 
 #content
   overflow: auto
+
+.content
+  position: absolute
+  top: $page_title_height
+  left: 0px
+  right: 0px
+  bottom: 0px
+  overflow: hidden
 
 ul
   list-style: none

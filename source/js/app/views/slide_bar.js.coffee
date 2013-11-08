@@ -2,7 +2,8 @@ define [
   'composite.view'
   'jquery'
   'app/templates/slide_bar'
-], (CompositeView, $, SlideBarTemplate) ->
+  'app/views/login_view'
+], (CompositeView, $, SlideBarTemplate, LoginView) ->
   
   class SlideBar extends CompositeView
   
@@ -12,5 +13,12 @@ define [
       @$el.html JST['app/templates/slide_bar'] 
 
     events:
-      'click #login-btn': 'login'
-      'click #register-btn': 'register'
+      'click .login': 'login'
+      'click .register': 'register'
+
+    login: ->
+      slide.close()
+      App.tool_helper.pushView
+        title: '登录'
+        view: $ (new LoginView()).el
+        backLabel: "<div class='back'><i></i></div>"

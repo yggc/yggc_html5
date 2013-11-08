@@ -20,12 +20,13 @@ define [
       window.viewNavigator = new ViewNavigator('body')
       # load first view
       defaultView = App.tool_helper.firstView()
-      defaultView.backLabel = "<div class='slide-menu'><i></i></div>"
+      defaultView.backLabel = "<div class='slide-menu'><i onclick='slide.open()'></i></div>"
       window.viewNavigator.pushView(defaultView)
       # load slide bar
       slideBarView = new SlideBarView()
       $('.slidingview_wrapper').html(slideBarView.el)
-      new SlidingView( 'sidebar', 'main' )
+      window.slide = new SlidingView( 'sidebar', 'main' )
+      App.tool_helper.hideLoading()
       # if !@loggedIn()
       #   @login()
       # else
@@ -59,12 +60,12 @@ define [
         collection: news
       @swap(newsView)
       newsView.fetchNews()
-      $('#content').html(newsView.el)
+      $('.contentHolder').html(newsView.el)
 
     login: ->
       App.tool_helper.hideLoading()
       login = new Login()
       loginView = new LoginView
         model: login
-      $('#main').prepend(loginView.el)
+      $('.contentHolder').prepend(loginView.el)
     

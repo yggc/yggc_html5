@@ -33,11 +33,11 @@ define [
         success: @successCreate
     
     register: ->
-      App.tool_helper.log('to register view')
+      App.tool_helper.alert('to register view')
       # App.router.register()
 
     forgetPassword: ->
-      App.tool_helper.log('to forget-password view')
+      App.tool_helper.alert('to forget-password view')
       # App.router.forgetPassword()
 
     successCreate: (model, response, options) ->

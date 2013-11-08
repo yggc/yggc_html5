@@ -1,6 +1,6 @@
 .header_title {
     position: absolute;
-    top: 12px;
+    top: 14px;
     left: 0%;
     right: 0%;
     margin-left: auto;
@@ -8,8 +8,8 @@
     text-align: center;
     font-weight: bold;
     color: #FFFFFF;
+    font-size: 18px;
     white-space: nowrap;
-    overflow: hidden;
 
     -o-text-overflow: ellipsis;
     -ms-text-overflow: ellipsis;
@@ -33,12 +33,6 @@
 }
 
 .content {
-    position: absolute;
-    top: 46px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    overflow: hidden;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 
@@ -75,7 +69,7 @@
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background-color: white;
+    /*background-color: white;*/
     overflow: auto;
     padding: 0px;
     margin: 0px;
