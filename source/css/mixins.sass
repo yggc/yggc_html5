@@ -4,6 +4,13 @@
   -moz-border-radius: $value
   -webkit-border-radius: $value
   border-radius: $value
+  -ms-border-radius: $value
+  -o-border-radius: $value
+
+@mixin side_border_radius($vert, $horz, $radius: $border_radius)
+// 　border-#{$vert}-#{$horz}-radius: $radius
+// 　-moz-border-radius-#{$vert}#{$horz}: $radius
+// 　-webkit-border-#{$vert}-#{$horz}-radius: $radius
 
 @mixin box_shadow($shadow: 5px, $color: #2fad91)
   box-shadow: 0 0 $shadow 0 $color
