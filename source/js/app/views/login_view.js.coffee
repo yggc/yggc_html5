@@ -3,7 +3,8 @@ define [
   'jquery'
   'app/models/user'
   'app/templates/login_register/login'
-], (CompositeView, $, ProfileView, User, LoginTemplate)->
+  'app/templates/login_register/login_header'
+], (CompositeView, $, ProfileView, User, LoginTemplate, LoginHeaderTemplate)->
   
   class LoginView extends CompositeView
     
@@ -11,9 +12,8 @@ define [
     id: 'login'
 
     initialize: (options) ->
-      $('header').html()
-      loginTemplate = JST['app/templates/login_register/login'] 
-      @$el.html loginTemplate
+      $('header').html JST['app/templates/login_register/login_header'] 
+      @$el.html JST['app/templates/login_register/login'] 
 
     events:
       'click #login-btn': 'login'
