@@ -14,25 +14,19 @@ define ['backbone','jquery','viewnavigator'], (Backbone, $, ViewNavigator) ->
     log: (info) ->
        console.log('LOG: ' + info ) if window.console && window.console.log
 
-    pushView: ->
-      view = @getView()
+    pushView: (view = @firstView()) ->
       window.viewNavigator.pushView(view)
 
     popView: ->
       window.viewNavigator.popView()
 
-    getView: ->
-      bodyView = $('<div>' + Math.random().toString() + 
-        '<hr><li href="#" onclick="App.tool_helper.pushView()" class="viewNavigator_backButton">push view</li>' +
-        ' <li href="#" onclick="App.tool_helper.popView()" class="viewNavigator_backButton">pop view</li><hr>' + 
-        @getMeat() + '</div>')
-      links = bodyView.find('a')
+    firstView: ->
+      tmpView = $('<div>' +
+        '<a href="#" onclick="App.tool_helper.pushView()" class="viewNavigator_backButton">登录</a>' +
+        '<a href="#" onclick="App.tool_helper.popView()" class="viewNavigator_backButton">back</a>' + 
+        '</div>')
 
-      title: "Default View " + parseInt(Math.random()*1000),
-      backLabel: "Back"
-      view:  bodyView
+      title: "新闻首页",
+      backLabel: "<div class='back'><i></i></div>"
+      view:  ''
           
-
-    getMeat: ->
-      iterations = 1 + parseInt(Math.random() * 25)
-      result = "sss"

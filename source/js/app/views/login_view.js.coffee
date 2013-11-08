@@ -12,7 +12,7 @@ define [
     id: 'login'
 
     initialize: (options) ->
-      $('header').html JST['app/templates/login_register/login_header'] 
+      # $('header').html JST['app/templates/login_register/login_header'] 
       @$el.html JST['app/templates/login_register/login'] 
 
     events:

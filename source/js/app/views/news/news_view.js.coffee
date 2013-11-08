@@ -1,7 +1,7 @@
 define ['composite.view' 
         'jquery' 
         'underscore'
-        'app/templates/news/new'
+        'app/templates/news/index'
 ], (CompositeView, $, _, newTemplate) ->
 
   class NewsView extends CompositeView
@@ -11,7 +11,7 @@ define ['composite.view'
     initialize: (options) ->
       ''
 
-    template: JST['app/templates/news/']
+    template: JST['app/templates/news/index']
         
     render: ->
       @$el.html @template
