@@ -19,6 +19,7 @@ define [
 
     login: ->
       slide.close()
+      window.App.menuIsOpen = false
       App.tool_helper.pushView
         title: '登录'
         view: $ (new LoginView()).el
@@ -26,6 +27,7 @@ define [
 
     register: ->
       slide.close()
+      window.App.menuIsOpen = false
       App.tool_helper.pushView
         title: '注册'
         view: $ (new RegisterView()).el
