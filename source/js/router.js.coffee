@@ -16,7 +16,6 @@ define [
   class Router extends Backbone.Router
     
     initialize: (options) ->
-      window.App.tool_helper = new ToolHelper()
       window.viewNavigator = new ViewNavigator('body')
       # load first view
       defaultView = App.tool_helper.firstView()

@@ -134,6 +134,11 @@ ViewNavigator.prototype.updateView = function( viewDescriptor ) {
         //this is for proper handling in splitviewnavigator
         this.setHeaderPadding( this.headerPadding );
     }
+    
+    // load the slide menu icon  ** 131109 zhimeng
+    if (viewDescriptor.slideIcon) {
+        this.headerContent.append(viewDescriptor.slideIcon)
+    }
 
     this.headerTitle = $('<div class="' + this.options.CSSNamespace + 'header_title">' + viewDescriptor.title + '</div>');
     this.headerContent.append( this.headerTitle );

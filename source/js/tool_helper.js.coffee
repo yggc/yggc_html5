@@ -1,4 +1,4 @@
-define ['backbone','jquery','viewnavigator'], (Backbone, $, ViewNavigator) ->
+define ['backbone','jquery','viewnavigator','app/views/slide_menu_icon'], (Backbone, $, ViewNavigator, SlideMenuIconView) ->
 
   class window.ToolHelper
 
@@ -13,6 +13,12 @@ define ['backbone','jquery','viewnavigator'], (Backbone, $, ViewNavigator) ->
     
     log: (info) ->
        console.log('LOG: ' + info ) if window.console && window.console.log
+    
+    # hasEvent: (element, eventName) ->
+    #   if $(element).data("events") && $(element).data("events")[eventName]
+    #     true
+    #   else
+    #     false
 
     pushView: (view = @firstView()) ->
       window.viewNavigator.pushView(view)
@@ -20,13 +26,17 @@ define ['backbone','jquery','viewnavigator'], (Backbone, $, ViewNavigator) ->
     popView: ->
       window.viewNavigator.popView()
 
-    firstView: ->
-      tmpView = $('<div>' +
-        '<a href="#" onclick="App.tool_helper.pushView()" class="viewNavigator_backButton">登录</a>' +
-        '<a href="#" onclick="App.tool_helper.popView()" class="viewNavigator_backButton">back</a>' + 
-        '</div>')
+    closeSideBar: ->
+      slide.close()
+      window.App.menuIsOpen = false
 
-      title: "新闻首页",
-      backLabel: "<div class='back'><i></i></div>"
-      view:  ''
-          
+    openSideBar: ->
+      slide.open()
+      window.App.menuIsOpen = true
+
+    firstView: (view = '') ->
+      window.slideIcon = new SlideMenuIconView()
+      res = 
+        title: "新闻首页"
+        slideIcon: slideIcon.el
+        view:  view
