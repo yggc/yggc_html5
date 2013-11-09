@@ -1,2 +1,17 @@
-<span class="login">登录</span>
-<span class="register">注册</span>
+<div id="sidebar" class="slidingview_sidebar">
+    <div class='avatar'>
+        <% if (App.currentUser) {%>
+            <div class='user-header'></div>
+            <div class='note'></div>
+        <% } else { %>
+            <div class='user-header'><i></i></div>
+            <div class='note'>帐号未登陆</div>
+            <div class="login btn"><span>登录</span></div>
+            <div class="register btn"><span>注册</span></div>
+        <% } %>
+    </div>
+
+    <div class='settings'>
+
+    </div>
+</div>

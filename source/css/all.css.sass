@@ -73,6 +73,7 @@ input
   right: 0px
   bottom: 0px
   overflow: hidden
+  background: white
 
 ul
   list-style: none
@@ -88,3 +89,44 @@ ul.rounded, ul.list
     border-top: 1px solid $ul_border_color
     &:first-child
       border-top: none
+
+// side bar
+
+#sidebar
+  color: rgb(88,88,88)
+  .avatar
+    background: url('../img/bg_blue.png')
+    height: 44px
+    padding: 8px
+    & div
+      // display: inline
+      float: left
+      height: 100%
+    .user-header
+      width: 20%
+      i
+        width: 45px
+        height: 45px
+        display: block
+        @include border-radius($middle_border_radius)
+        background: #fff
+    .note
+      width: 40%
+      margin: 15px 0 -15px 0
+    .btn
+      width: 20%
+      & span
+        display: block
+        padding: 5px 0
+        margin-top: 10px
+        text-align: center
+        color: white
+        width: 80%
+        @include border-radius($border_radius)
+      &.login span
+        background: $main_color
+      &.register span
+        background: $main_dark_yellow
+  .settings
+    background: url('../img/bg_black.png')
+    height: 80%
